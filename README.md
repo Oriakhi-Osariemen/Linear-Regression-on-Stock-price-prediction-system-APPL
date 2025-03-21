@@ -88,3 +88,75 @@ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation Matrix')
 plt.show()
 ```
+![Result](https://github.com/Oriakhi-Osariemen/Linear-Regression-on-Stock-price-prediction-system-APPL/blob/main/Screenshot%202025-03-21%20012257.png)
+
+######
+Analyze the correlation between features and the target variable to identify the most relevant features.
+
+Explanation:
+The correlation matrix shows how each feature is related to the target (Next_Close).
+
+Features with high correlation (close to 1 or -1) are more important for prediction.
+
+### Train-Test Split
+```Python
+# Split the data into 80% training and 20% testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+print("Training set size:", X_train.shape)
+print("Testing set size:", X_test.shape)
+```
+
+#####
+Training set size: (194, 5)
+Testing set size: (49, 5)
+
+The dataset is split into training and testing sets to evaluate the model's performance.
+
+Explanation:
+The training set (80%) is used to train the model.
+
+The testing set (20%) is used to evaluate the model's performance on unseen data.
+
+### Model Training 
+```Python
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print("Mean Squared Error:", mse)
+print("R-squared:", r2)
+```
+
+#####
+Mean Squared Error: 6.981434921686678
+R-squared: 0.9885746789261214
+
+Evaluate the model using Mean Squared Error (MSE) and R-squared.
+
+Explanation:
+Mean Squared Error (MSE): Measures the average squared difference between predicted and actual values. Lower values indicate better performance.
+
+R-squared: Indicates how well the model explains the variance in the target variable. Values closer to 1 indicate a better fit.
+
+#### Result Evaluation 
+```Python
+# Plot actual vs predicted values
+plt.figure(figsize=(10, 6))
+plt.plot(y_test.values, label='Actual Prices')
+plt.plot(y_pred, label='Predicted Prices')
+plt.xlabel('Time')
+plt.ylabel('Stock Price')
+plt.title(f'{ticker} Stock Price Prediction')
+plt.legend()
+plt.show()
+```
