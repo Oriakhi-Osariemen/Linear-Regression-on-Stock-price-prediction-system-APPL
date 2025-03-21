@@ -160,3 +160,12 @@ plt.title(f'{ticker} Stock Price Prediction')
 plt.legend()
 plt.show()
 ```
+![Result1](https://github.com/Oriakhi-Osariemen/Linear-Regression-on-Stock-price-prediction-system-APPL/blob/main/Screenshot%202025-03-21%20014854.png)
+
+#####
+Visualization of the actual vs predicted stock prices to assess the model's performance.
+
+Explanation:
+The plot shows how closely the predicted prices match the actual prices.
+
+This helps in visually assessing the model's accuracy.
