@@ -1,4 +1,4 @@
-# Linear-Regression-on-Stock-price-prediction-system-APPL
+# Linear-Regression-on-Stock-price-prediction-system-AAPL
 
 ![Appl Logo](https://github.com/Oriakhi-Osariemen/Linear-Regression-on-Stock-price-prediction-system-APPL/blob/main/download%20(2).jpeg)
 
