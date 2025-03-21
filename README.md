@@ -1,5 +1,7 @@
 # Linear-Regression-on-Stock-price-prediction-system-APPL
 
+![Appl Logo](https://github.com/Oriakhi-Osariemen/Linear-Regression-on-Stock-price-prediction-system-APPL/blob/main/download%20(2).jpeg)
+
 ## Project Overview
 This project aims to predict stock prices using Linear Regression. It involves collecting historical stock data, preprocessing it, selecting relevant features, training a machine learning model, and evaluating its performance. The goal is to predict the next day's closing price based on historical data
 
@@ -76,3 +78,13 @@ Explanation:
 The target variable (Next_Close) is created by shifting the Close column by one day.
 Features like Open, High, Low, Close, and Volume are used to predict the target.
 
+### Feature Selection 
+```Python
+# Calculate correlation matrix
+corr_matrix = data.corr()
+
+# Visualize the correlation matrix
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+```
